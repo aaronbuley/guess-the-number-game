@@ -3,7 +3,8 @@
 #Add levels to the game to make it more exciting
 
 from random import randint  #To generate a random number
-
+name = input("Please Enter your name: ")
+print("Welcome to my Number game, " + name)
 def game():
     rand_number = randint(0,100)   #Generates a random number
     print("\nI have selected a number between 1 to 100...")
@@ -12,15 +13,15 @@ def game():
     while i<7:  #6 Chances to the user
         user_number = int(input('Enter your number: ')) 
         if user_number < rand_number:
-            print("\nMy number is greater than your guessed number")
+            print("\n" + name + ", My number is greater than your guessed number")
             print("you now have " + str(6-i)+ " chances left" )
             i = i+1
         elif user_number > rand_number:
-            print("\nMy number is less than your guessed number")
+            print("\n" + name + ", My number is less than your guessed number")
             print("you now have " + str(6-i)+ " chances left" )
             i = i+1
         elif user_number == rand_number:
-            print("\nYou have guessed the correct number! Congratulations!!!")
+            print("\nCongratulations "+name+"!! You have guessed the correct number!")
             break
         else:
             print("This is an invalid number. Please try again")
